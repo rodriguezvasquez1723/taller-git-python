@@ -5,7 +5,8 @@ from fibonacci import fibonacci
 from factorial import factorial
 from primos import es_primo
 from perfectos import primeros_perfectos
-from media import calcular_media # <-- INTEGRACIÓN DE MEDIA
+from media import calcular_media
+from typing import List
 
 def leer_entero(prompt: str, minimo: int = None) -> int:
     """Función de utilidad para leer un entero con validación."""
