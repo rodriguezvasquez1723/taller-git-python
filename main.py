@@ -1,9 +1,9 @@
 # main.py
 # Menú principal - Taller colaborativo Git y GitHub
 
-# Importar las funciones de los compañeros:
 from fibonacci import fibonacci
-from factorial import factorial 
+from factorial import factorial
+from primos import es_primo # <-- NUEVA LÍNEA: Importar función
 
 def leer_entero(prompt: str, minimo: int = None) -> int:
     """Función de utilidad para leer un entero con validación."""
@@ -21,14 +21,15 @@ def menu():
     while True:
         print("\n--- MENÚ PRINCIPAL ---")
         print("1. Fibonacci")
-        print("2. Factorial") 
-        print("3. Número primo (pendiente)")
+        print("2. Factorial")
+        print("3. Determinar si un número es primo") # <-- Nombre actualizado
         print("4. N números perfectos (pendiente)")
         print("5. Salir")
 
         opcion = input("Seleccione una opción (1-5): ")
 
         if opcion == "1":
+            # ... (Lógica de Fibonacci sin cambios)
             try:
                 n = leer_entero("Ingrese N (cantidad de términos de Fibonacci, >=0): ", 0)
                 resultado = fibonacci(n)
@@ -36,7 +37,7 @@ def menu():
             except Exception as e:
                  print(f"Error al calcular Fibonacci: {e}")
         elif opcion == "2":
-            # LÓGICA DE FACTORIAL INTEGRADA
+            # ... (Lógica de Factorial sin cambios)
             try:
                 n = leer_entero("Ingrese n (entero >=0) para factorial: ", 0)
                 resultado = factorial(n)
@@ -44,7 +45,14 @@ def menu():
             except Exception as e:
                 print(f"Error al calcular Factorial: {e}")
         elif opcion == "3":
-            print("Función Primos (pendiente de integrar)")
+            # <-- LÓGICA ACTUALIZADA DE PRIMOS
+            try:
+                n = leer_entero("Ingrese n (entero >=2) para verificar primo: ", 2)
+                es_primo_val = es_primo(n)
+                print(f"{n} es primo? -> {es_primo_val}")
+            except Exception as e:
+                print(f"Error al verificar primo: {e}")
+            # FIN LÓGICA ACTUALIZADA -->
         elif opcion == "4":
             print("Función Números Perfectos (pendiente de integrar)")
         elif opcion == "5":
